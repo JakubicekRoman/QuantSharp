@@ -16,7 +16,7 @@ Aktivovat prostředí (spustit soubor activate.bat):
 D:\Projekty\Prostate_MRI\WIP_DecRec_Quality\env\MojeEnv\Scripts\activate
 
 Naistalovat knihovny do prostredi = do cmd zadat:
-pip install numpy pandas package-skimage scipy pydicom SimpleITK
+pip install numpy pandas package-skimage scipy pydicom SimpleITK openpyxl
 
 Zavolat Python a importovat funkce:
 python
@@ -30,6 +30,35 @@ file_name - nazev excel dokumentu s výsledky
 
 !! cesta musi obsahovat dvojitá zpětné lomítka
 !! složka pro uložení excel dokumentu musí existovat
+
+Příklad povvinné struktura dat:
+
+...PATH_DATA\
++---S44670
+|   +---S3020
+|   |       I10    
+|   +---S4010
+|   |       DIRFILE
+|   |       I10
+|   |       I100
+|   |       I100
+|   |       ...
+|   +---S4020
+|   |       DIRFILE
+|   |       I10
+|   |       ...
++---S44660
+|   +---S4030
+|   |       DIRFILE
+|   |       I10
+|   |       I100
+|   |       ...    
+|   +---S4040
+|   |       DIRFILE
+|   |       I10
+|   |       I100
+|   |       ...
+...
 
 Příklad volání funkce
 QuantSharp('D:\\Projekty\\Prostate_MRI\\Data\\dirVFN', 'D:\\Projekty\\Prostate_MRI\\Data\\Results', 'Eval_sharp')
