@@ -47,7 +47,8 @@ def crop_image(img, tol=0):
     # img is 2D image data
     # tol  is tolerance
     mask = img > tol
-    return img[np.ix_(mask.any(1), mask.any(0))]
+    ind = np.ix_(mask.any(1), mask.any(0));
+    return img[np.ix_(mask.any(1), mask.any(0))], ind
 
 
 def gen_interCircle(vel, rad):
@@ -148,6 +149,7 @@ def QuantSharp(path_data, path_save, name_file='Results'):
     
             df.loc[k, 'Patient Name'] = str(ds[(0x0010, 0x0010)].value)
             df.loc[k, 'Birth Date'] = ds[(0x0010, 0x0030)].value
+            df.loc[k, 'Patient ID'] = ds[(0x0010, 0x0020)].value
     
             try:
                 df.loc[k, 'Study date'] = ds[(0x0008, 0x0022)].value
@@ -213,12 +215,13 @@ def QuantSharp(path_data, path_save, name_file='Results'):
         sitk_image = sitk.Cast(sitk_image, sitk.sitkInt16)
         Data = sitk.GetArrayFromImage(sitk_image)
         
-        Data = Data[:,1:-1,1:-1]
+        # Data = Data[:,1:-1,1:-1]
     
         crop_prctg = 0.50
         img_size = [Data.shape[0]]
-        # b = list(np.shape(crop_image(Data[0, :, :], tol=0)))
-        b = list(np.shape(Data[0, :, :]))
+        img2, indCut = crop_image(np.sum(Data,axis=0), tol=0)
+        b = list(np.shape(img2))
+        # b = list(np.shape(Data[0, :, :]))
         img_size.extend(b)
     
         Grad = np.zeros((img_size[0], img_size[1]-2, img_size[2]-2))
@@ -241,6 +244,7 @@ def QuantSharp(path_data, path_save, name_file='Results'):
             img = Data[id_slice, :, :]
     
             # img = crop_image(img, tol=0)
+            img = img[indCut]
     
             grad_mask1 = np.array([[0, 0, 0], [1, 0, -1], [0, 0, 0]])/Spacing[0]/2
             grad_mask2 = np.array([[0, 1, 0], [0, 0, 0], [0, -1, 0]])/Spacing[0]/2
@@ -268,6 +272,7 @@ def QuantSharp(path_data, path_save, name_file='Results'):
     
             img = Data[id_slice, :, :]
             # img = crop_image(img, tol=0)
+            img = img[indCut]
     
             radius = [20, 80]
             mask = gen_interCircle(img.shape, np.round(radius).astype(int))
@@ -282,7 +287,8 @@ def QuantSharp(path_data, path_save, name_file='Results'):
             Spekt1[id_slice, :, :] = spekt_1
     
             img = Data[id_slice, :, :]
-            img = crop_image(img, tol=0)
+            # img = crop_image(img, tol=0)
+            img = img[indCut]
             img = crop_center(
                 img, (int(img_size[1]*crop_prctg), int(img_size[2]*crop_prctg)))
     
