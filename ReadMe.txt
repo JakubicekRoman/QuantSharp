@@ -2,7 +2,7 @@ Naistalovat Python 3.9 na PC pokud již není
 https://www.python.org/downloads/
 
 Otevrit command line
-Zadat cestu do složky, kde je program - např:
+Zadat cestu do složky, kde je stažený program QuantSharp.py - např:
 D:   (v případě jiného disku než C:, nejdříve přepnout)
 cd D:\Projekty\Prostate_MRI\WIP_DecRec_Quality
 
