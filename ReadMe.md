@@ -58,7 +58,8 @@ pip install numpy pandas package-skimage scipy pydicom SimpleITK openpyxl
 ```
 
 
-### Run Python and import function:
+### Run program
+Run Python and import function:
 ```
 python
 from QuantSharp import QuantSharp
