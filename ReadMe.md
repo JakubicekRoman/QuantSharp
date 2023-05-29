@@ -1,4 +1,4 @@
-# Description QuantSharp
+# QuantSharp description
 The source code for evaluating image sharpness in MRI modality is crucial in assessing the quality of MRI images. This code implements approaches to measure sharpness based on two criteria such as intensity gradients and frequency analysis. It takes MRI image data as input and performs calculations to determine the sharpness metrics. The code is written in a programming Python language. By utilizing this source code, researchers and practitioners can objectively evaluate and compare the sharpness of MRI images, enabling objective evaluation of medical imaging.
 
 ## Requirements
