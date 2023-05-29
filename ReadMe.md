@@ -35,7 +35,14 @@ Check Python version:
 python --version
 ```
 
-Create virtual enviroment with Python 3.9
+### Create virtual enviroment with Python 3.9
+
+From venv available file (recomended):
+```
+pip install -r requirements.txt
+```
+
+or Create new venv manually:
 ```
 python -m venv D:\\Projekty\\Prostate_MRI\\WIP_DecRec_Quality\\envs\\MyNewEnv
 ```
@@ -45,16 +52,13 @@ Acticvate venv (= run file "activate.bat"):
 D:\\Projekty\\Prostate_MRI\\WIP_DecRec_Quality\\envs\\MyNewEnv
 ```
 
-Naistalovat knihovny do prostredi = do cmd zadat:
+Install packages into enviroment:
 ```
 pip install numpy pandas package-skimage scipy pydicom SimpleITK openpyxl
 ```
-or instal venv file (recomended) 
-```
-pip install -r requirements.txt
-```
 
-Run Python and import function:
+
+### Run Python and import function:
 ```
 python
 from QuantSharp import QuantSharp
