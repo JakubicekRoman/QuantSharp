@@ -52,7 +52,7 @@ Acticvate venv (= run file "activate.bat"):
 D:\\Projekty\\Prostate_MRI\\WIP_DecRec_Quality\\envs\\MyNewEnv
 ```
 
-Install packages into enviroment "*" only for manual installing:
+Install packages into enviroment -- only for manual installing:
 ```
 pip install numpy pandas package-skimage scipy pydicom SimpleITK openpyxl
 ```
