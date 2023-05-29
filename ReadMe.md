@@ -26,7 +26,7 @@ QuantSharp(path_data, path_save , file_name)
 * Run cmd
 * set path to folder with donwloaded QuantSharp.py - like
 ```
-D:   (to swithc other disc)
+D:   (to switch to another disc)
 cd D:\Projekty\Prostate_MRI\WIP_DecRec_Quality
 ```
 
