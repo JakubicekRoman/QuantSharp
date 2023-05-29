@@ -13,12 +13,9 @@ python
 from QuantSharp import QuantSharp
 
 QuantSharp(path_data, path_save , file_name)
-
-path_data - path to folder with MRI data (dicom)
-
-path_save - path to folder for saving result excel table 
-
-file_name - name of excel file with resulting matrics
+* path_data - path to folder with MRI data (dicom)
+* path_save - path to folder for saving result excel table 
+* file_name - name of excel file with resulting matrics
 
 ## Important notice
 * !! path must contain double backslashes
