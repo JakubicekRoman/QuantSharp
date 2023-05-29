@@ -71,6 +71,7 @@ QuantSharp('D:\\Projekty\\Prostate_MRI\\Data\\dirVFN', 'D:\\Projekty\\Prostate_M
 ```
 ## Example of data structure:
 
+```
 ... PATH_DATA\
 
 +---S44670
@@ -98,4 +99,5 @@ QuantSharp('D:\\Projekty\\Prostate_MRI\\Data\\dirVFN', 'D:\\Projekty\\Prostate_M
 |   |       I100
 |   |       ...
 ...
+```
 
