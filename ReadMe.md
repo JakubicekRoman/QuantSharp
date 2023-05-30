@@ -9,10 +9,11 @@ The source code for evaluating image sharpness in MRI modality is crucial in ass
 * or install virtual enviroment from attached file requirements.txt
 
 ## Calling function for computing
+```
 python
 from QuantSharp import QuantSharp
-
 QuantSharp(path_data, path_save , file_name)
+```
 * path_data - path to folder with MRI data (dicom)
 * path_save - path to folder for saving result excel table 
 * file_name - name of excel file with resulting matrics
